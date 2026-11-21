@@ -1,0 +1,49 @@
+{
+  "name": "notehub",
+  "private": true,
+  "version": "1.0.0",
+  "description": "NoteHub - a student notes sharing platform with React, Express and MongoDB",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "concurrently --kill-others -n API,WEB -c blue,magenta \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "node --env-file-if-exists=.env --watch server/index.js",
+    "dev:client": "vite",
+    "start": "node --env-file-if-exists=.env server/index.js",
+    "create-admin": "node --env-file-if-exists=.env server/create-admin.js",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "npm run test:client && npm run test:server",
+    "test:client": "vitest run",
+    "test:server": "node --env-file-if-exists=.env --test tests/server/*.test.js",
+    "test:watch": "vitest",
+    "format": "prettier --write src server tests public/theme-init.js index.html vite.config.js package.json README.md .prettierrc.json",
+    "format:check": "prettier --check src server tests public/theme-init.js index.html vite.config.js package.json README.md .prettierrc.json"
+  },
+  "dependencies": {
+    "connect-mongo": "^6.0.0",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.7.4",
+    "express-session": "^1.19.0",
+    "helmet": "^8.3.0",
+    "lucide-react": "^0.460.0",
+    "mongodb": "^7.9.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.18.5"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@vitejs/plugin-react": "^5.2.0",
+    "concurrently": "^10.0.7",
+    "jsdom": "^25.0.1",
+    "prettier": "^3.9.10",
+    "vite": "^7.3.8",
+    "vitest": "^4.1.12"
+  }
+}

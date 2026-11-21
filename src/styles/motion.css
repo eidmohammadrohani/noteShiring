@@ -1,0 +1,124 @@
+/* Motion is kept separate from layout; reduced-motion preferences apply to every effect. */
+@keyframes enter-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes enter-photo {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes accent-drift {
+  0%,
+  100% {
+    transform: rotate(-4deg) translateY(0);
+  }
+  50% {
+    transform: rotate(-2deg) translateY(-10px);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero-layout > :first-child {
+    animation: enter-up 0.7s backwards;
+  }
+  .hero-visual {
+    animation: enter-photo 0.85s 0.12s backwards;
+  }
+  .hero-visual::before {
+    animation: accent-drift 9s ease-in-out infinite;
+  }
+  .photo-caption {
+    animation: enter-up 0.65s 0.45s backwards;
+  }
+  .floating-tag {
+    animation: enter-up 0.65s 0.6s backwards;
+  }
+  .auth-story {
+    animation: enter-up 0.75s backwards;
+  }
+  .auth-card {
+    animation: enter-up 0.6s 0.1s backwards;
+  }
+  .content > * {
+    animation: enter-up 0.45s backwards;
+  }
+  .notes-grid > *,
+  .stat-grid > *,
+  .reveal.in > .teaser,
+  .reveal.in .steps > li {
+    animation: enter-up 0.55s backwards;
+  }
+  .notes-grid > :nth-child(3n + 2),
+  .stat-grid > :nth-child(3n + 2),
+  .reveal.in > :nth-child(2),
+  .steps > :nth-child(2) {
+    animation-delay: 0.07s;
+  }
+  .notes-grid > :nth-child(3n + 3),
+  .stat-grid > :nth-child(3n + 3),
+  .reveal.in > :nth-child(3),
+  .steps > :nth-child(3) {
+    animation-delay: 0.14s;
+  }
+  .home-links.open {
+    animation: enter-up 0.2s backwards;
+  }
+}
+:is(.btn, .icon-btn, .nav-item, .category, .teaser, .stat-card, .logo-mark) {
+  transition:
+    transform 0.22s ease,
+    background 0.22s ease,
+    color 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease;
+}
+:is(.category, .teaser, .stat-card.is-link):hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--line));
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+}
+.icon-btn:hover {
+  transform: translateY(-2px);
+  background: var(--accent-soft);
+}
+.brand:hover .logo-mark {
+  transform: rotate(-6deg);
+}
+.nav-item:hover svg {
+  transform: translateX(2px);
+}
+.nav-item svg {
+  transition: transform 0.2s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  :is(.category, .teaser, .stat-card, .note-card, .btn, .icon-btn, .logo-mark):hover,
+  .brand:hover .logo-mark,
+  .nav-item:hover svg {
+    transform: none;
+  }
+}

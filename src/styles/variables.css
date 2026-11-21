@@ -1,0 +1,64 @@
+/* A quiet, readable study workspace. Shared across public and private pages. */
+:root {
+  --danger: #bd3030;
+  --success: #24745c;
+  --warn: #936514;
+  --radius: 18px;
+  --radius-sm: 10px;
+  --sidebar-w: 248px;
+  --font-body: 'Segoe UI', system-ui, sans-serif;
+  --font-head: 'Segoe UI', system-ui, sans-serif;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  color-scheme: light;
+  --ink: #24223e;
+  --paper: #f7f7fc;
+  --paper-2: #eeedf8;
+  --surface: #ffffff;
+  --accent: #6652db;
+  --accent-strong: #5140b9;
+  --accent-contrast: #ffffff;
+  --teal: #256daf;
+  --line: #e3e1ef;
+  --text: #29283f;
+  --text-mut: #69667d;
+  --sidebar-bg: #1c1b36;
+  --sidebar-text: #e9e6fa;
+  --logo-accent: #b4a5ff;
+  --accent-soft: #efebff;
+  --sidebar-muted: #aaa4c8;
+  --sidebar-active: #3f346a;
+  --sidebar-active-text: #ffffff;
+  --shadow: 0 16px 40px -22px #4a388a45;
+  --shadow-sm: 0 6px 18px -12px #4a388a30;
+}
+:root[data-theme='dark'] {
+  --danger: #ff9999;
+  --success: #82d4af;
+  --warn: #f1c980;
+  --shadow: 0 12px 36px -22px #0009;
+  --shadow-sm: 0 4px 16px -12px #0009;
+  color-scheme: dark;
+  --ink: #f0edff;
+  --paper: #141320;
+  --paper-2: #242137;
+  --surface: #1d1b2d;
+  --accent: #b8a5ff;
+  --accent-strong: #c9baff;
+  --accent-contrast: #21173e;
+  --teal: #85bbf1;
+  --line: #363146;
+  --text: #f0edff;
+  --text-mut: #b6afc9;
+  --sidebar-bg: #100f1c;
+  --sidebar-text: #e9e6fa;
+  --logo-accent: #c3b4ff;
+  --accent-soft: #302643;
+  --sidebar-muted: #aaa4c8;
+  --sidebar-active: #3a2c57;
+  --sidebar-active-text: #f0edff;
+}
